@@ -15,7 +15,7 @@ public class ActiveUserListener implements ServletContextListener, HttpSessionLi
     // Tên attribute lưu trong Application Scope
     private static final String ACTIVE_USERS_ATTRIBUTE = "activeUsersCount";
     // Khởi tạo biến đếm = 0 khi server (application) bắt đầu chạy
-    private static final AtomicInteger activeSessions = new AtomicInteger(0);
+    private static final AtomicInteger activeSessions = new AtomicInteger(-1);
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {

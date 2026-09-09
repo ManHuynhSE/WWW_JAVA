@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -23,6 +24,7 @@ public class LoginServlet extends HttpServlet {
                          HttpServletResponse response)
             throws ServletException, IOException {
         if (userSession.isLoggedIn()) {
+
             response.sendRedirect(request.getContextPath() +
                     "/products");
             return;
@@ -43,7 +45,10 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/views/login.jsp").forward(request, response);
             return;
         }
+        HttpSession session = request.getSession(true);
+        session.setAttribute("user",userSession.getInstanceId());
         userSession.login(username);
+
         response.sendRedirect(request.getContextPath() +
                 "/products");
     }
