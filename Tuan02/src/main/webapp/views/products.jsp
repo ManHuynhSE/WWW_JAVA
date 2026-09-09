@@ -85,6 +85,8 @@ initial-scale=1">
         </p>
         <p class="technical">CDI session instance:
             ${userSession.instanceId}</p>
+        <p class="technical">Number of user online:
+            ${activeUsersCount}</p>
     </section>
 </main>
 </body>
