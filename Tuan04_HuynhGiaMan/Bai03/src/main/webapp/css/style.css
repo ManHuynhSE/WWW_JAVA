@@ -1,0 +1,70 @@
+/* Khung viền ngoài cùng màu xanh lá bao quanh toàn bộ trang */
+body {
+    font-family: "Times New Roman", Times, serif;
+    border: 2px solid green;
+    padding: 15px 20px 25px 20px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+/* Thẻ chứa danh sách các sản phẩm hiển thị theo hàng ngang */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* Khung từng sản phẩm */
+.product-class {
+    border: 1px solid #000;
+    padding: 15px 10px;
+    width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Tên sản phẩm */
+.product-class b {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Hình ảnh sản phẩm */
+.product-class img.hinh {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Form đặt số lượng và nút thêm giỏ hàng */
+.product-class form {
+    margin: 8px 0;
+}
+
+/* Ô nhập số lượng */
+.product-class input[type="text"] {
+    text-align: center;
+    width: 45px;
+    padding: 2px;
+    margin: 5px 0;
+}
+
+/* Nút Add To Cart */
+.product-class input[type="submit"] {
+    padding: 3px 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* Đăng ký kiểu cho các đường dẫn link */
+a {
+    color: purple;
+    text-decoration: underline;
+}
